@@ -118,7 +118,7 @@ module.exports = async (req, res) => {
       
       // Get the Gemini Pro model instance
       // Using 'gemini-pro' model for strategic analysis and extraction
-      const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' });
+      const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
       // Construct the prompt for Gemini to analyze the email thread
       // The prompt instructs Gemini to:
