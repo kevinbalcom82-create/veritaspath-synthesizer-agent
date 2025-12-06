@@ -118,7 +118,7 @@ module.exports = async (req, res) => {
       
       // Get the Gemini Pro model instance
       // Using 'gemini-pro' model for strategic analysis and extraction
-      const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+      const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' });
 
       // Construct the prompt for Gemini to analyze the email thread
       // The prompt instructs Gemini to:
@@ -197,7 +197,7 @@ ${fullAnalysis}`;
       // Call Claude API to generate the executive email draft
       // Using Claude 3.5 Sonnet model for high-quality text generation
       const claudeMessage = await anthropic.messages.create({
-        model: 'claude-3-haiku-20240307', // Latest Claude 3.5 Sonnet model
+        model: 'claude-3-5-sonnet-20241022', // Latest Claude 3.5 Sonnet model
         max_tokens: 500, // Sufficient for a concise email draft
         messages: [
           {
