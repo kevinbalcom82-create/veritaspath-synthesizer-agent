@@ -197,7 +197,7 @@ ${fullAnalysis}`;
       // Call Claude API to generate the executive email draft
       // Using Claude 3.5 Sonnet model for high-quality text generation
       const claudeMessage = await anthropic.messages.create({
-        model: 'claude-3-5-sonnet-20241022', // Latest Claude 3.5 Sonnet model
+        model: 'claude-3-haiku-20240307', // Latest Claude 3.5 Sonnet model
         max_tokens: 500, // Sufficient for a concise email draft
         messages: [
           {
