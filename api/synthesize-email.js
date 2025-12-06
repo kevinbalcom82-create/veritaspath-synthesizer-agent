@@ -41,7 +41,32 @@ module.exports = async (req, res) => {
   console.log('[synthesize-email] Request method:', req.method);
   console.log('[synthesize-email] Request body type:', typeof req.body);
 
+  
   // ============================================
+  // API Key Authentication
+  // ============================================
+  const requiredApiKey = process.env.API_ACCESS_KEY;
+  const providedApiKey = req.headers['x-api-key'];
+
+  // Check if required API key is configured
+  if (!requiredApiKey) {
+    console.error('[synthesize-email] API_ACCESS_KEY environment variable is not set');
+    return res.status(401).json({
+      status: 'error',
+      message: 'Unauthorized: Missing or invalid API key.'
+    });
+  }
+
+  // Check if user provided API key and if it matches
+  if (!providedApiKey || providedApiKey !== requiredApiKey) {
+    console.error('[synthesize-email] Invalid or missing API key');
+    return res.status(401).json({
+      status: 'error',
+      message: 'Unauthorized: Missing or invalid API key.'
+    });
+  }
+
+// ============================================
   // CORS Configuration
   // ============================================
   // Set CORS headers to allow cross-origin requests
