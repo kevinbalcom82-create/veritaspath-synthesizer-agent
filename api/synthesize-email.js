@@ -36,6 +36,10 @@ const Anthropic = require('@anthropic-ai/sdk');
 module.exports = async (req, res) => {
   // Log function invocation start for debugging in Vercel logs
   console.log('[synthesize-email] Function invoked');
+  console.log('[synthesize-email] Environment check - GEMINI_API_KEY:', process.env.GEMINI_API_KEY ? 'SET' : 'MISSING');
+  console.log('[synthesize-email] Environment check - CLAUDE_API_KEY:', process.env.CLAUDE_API_KEY ? 'SET' : 'MISSING');
+  console.log('[synthesize-email] Request method:', req.method);
+  console.log('[synthesize-email] Request body type:', typeof req.body);
 
   // ============================================
   // CORS Configuration
