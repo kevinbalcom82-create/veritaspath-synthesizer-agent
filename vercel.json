@@ -1,0 +1,8 @@
+{
+  "functions": {
+    "api/synthesize-email.js": {
+      "maxDuration": 60
+    }
+  }
+}
+

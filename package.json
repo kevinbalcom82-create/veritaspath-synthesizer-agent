@@ -1,0 +1,21 @@
+{
+  "name": "email-synthesizer",
+  "version": "1.0.0",
+  "description": "Vercel serverless function for email thread analysis and synthesis",
+  "main": "api/synthesize-email.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step required'"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@anthropic-ai/sdk": "^0.27.0"
+  },
+  "devDependencies": {
+    "vercel": "^39.0.0"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}
+
